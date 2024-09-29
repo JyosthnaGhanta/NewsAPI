@@ -5,10 +5,9 @@ const searchButton = document.getElementById('search-button');
 
 async function fetchRandomNews() {
     try {
-        const apiUrl = `https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=10&apiKey=${apiKey}`;
+        const apiUrl = https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=10&apiKey=${apiKey};
         const response = await fetch(apiUrl);
         const data = await response.json();
-        //console.log(data);
         return data.articles;
     } catch (error) {
         console.error("Error fetching random news", error);
@@ -18,7 +17,7 @@ async function fetchRandomNews() {
 
 async function fetchNewsQuery(query) {
     try {
-        const apiUrl = `https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey}`;
+        const apiUrl = https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey};
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data.articles;
@@ -70,5 +69,5 @@ searchButton.addEventListener("click", async () => {
         displayBlogs(articles);
     } catch (error) {
         console.error("Error fetching random news", error);
-    }
+    }
 })();
