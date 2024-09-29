@@ -95,4 +95,4 @@ searchButton.addEventListener("click", async () => {
     } catch (error) {
         console.error("Error fetching random news", error);
     }
-})();
+});
