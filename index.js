@@ -28,6 +28,26 @@ async function fetchNewsQuery(query) {
     }
 }
 
+async function fetchRandomNews() {
+    try {
+        const apiUrl = `https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=10&apiKey=${apiKey}`;
+        const response = await fetch(apiUrl);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!data.articles) {
+            throw new Error('Articles not found in response');
+        }
+        return data.articles;
+    } catch (error) {
+        console.error("Error fetching random news", error);
+        return [];
+    }
+}
+
 function displayBlogs(articles) {
     blogContainer.innerHTML = '';
     if (!articles || articles.length === 0) {
