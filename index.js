@@ -30,6 +30,10 @@ async function fetchNewsQuery(query) {
 
 function displayBlogs(articles) {
     blogContainer.innerHTML = '';
+    if (!articles || articles.length === 0) {
+        blogContainer.innerHTML = '<p>No articles found.</p>';
+        return;
+    }
     articles.forEach((article) => {
         const blogCard = document.createElement("div");
         blogCard.classList.add("blog-card");
