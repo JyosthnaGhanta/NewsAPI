@@ -1,0 +1,89 @@
+<head>
+    <title>Reg form</title>
+    <style>
+        body {
+            background: url('https://www.arch2o.com/wp-content/uploads/2022/10/Arch2O-paris-architecture-the-remodeling-of-a-demolished-city-into-a-polished-one-2.png');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .reg {
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 300px;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: aliceblue;
+            opacity: 0.9;
+            border-radius: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .success {
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reg">
+        <h1>Registration Page</h1>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <p>
+                <label>Username:</label>
+                <input type="text" id="username" placeholder="Enter your Username" required>
+            </p>
+            <p>
+                <label>Password:</label>
+                <input type="password" id="password" placeholder="Enter your Password" required>
+            </p>
+            <p>
+                <label>Confirm Password:</label>
+                <input type="password" id="confirm_password" placeholder="Confirm your Password" required>
+            </p>
+            <p>
+                <label>E-mail:</label>
+                <input type="email" id="email" placeholder="Enter your E-mail" required>
+            </p>
+            <p>
+                <label>Contact:</label>
+                <input type="text" id="contact" placeholder="Enter your Contact Number" required>
+            </p>
+            <p>
+                <button type="submit">Sign Up</button>
+            </p>
+        </form>
+        <div id="error-message" class="error"></div>
+        <div id="success-message" class="success"></div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
+    
+            errorMessage.textContent = '';
+            successMessage.textContent = '';
+    
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match!';
+                return false; 
+            }
+    
+            successMessage.textContent = 'Successfully registered!';
+            
+            document.getElementById('registrationForm').reset();
+    
+            return false;
+        }
+    </script>
+    
+</body>
+</html>
