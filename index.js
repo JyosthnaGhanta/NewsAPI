@@ -5,7 +5,7 @@ const searchButton = document.getElementById('search-button');
 
 async function fetchRandomNews() {
     try {
-        const apiUrl = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=10&apiKey=${apiKey}`;
+        const apiUrl = "https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}";
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data.articles;
@@ -17,7 +17,7 @@ async function fetchRandomNews() {
 
 async function fetchNewsQuery(query) {
     try {
-        const apiUrl = `https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey}`;
+        const apiUrl = "https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey}";
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data.articles;
@@ -38,7 +38,7 @@ function displayBlogs(articles) {
         blogCard.classList.add("blog-card");
 
         const img = document.createElement("img");
-        img.src = article.urlToImage || 'https://via.placeholder.com/280x180?text=No+Image';
+        img.src = article.urlToImage || "https://via.placeholder.com/280x180?text=No+Image";
         img.alt = article.title;
 
         const title = document.createElement("h2");
