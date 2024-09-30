@@ -5,7 +5,7 @@ const searchButton = document.getElementById('search-button');
 
 async function fetchRandomNews() {
     try {
-        const apiUrl = "https://newsapi.org/v2/everything?q=tesla&from=2024-08-30&sortBy=publishedAt&apiKey=${apiKey}";
+        const apiUrl = "https://newsapi.org/v2/everything?q=tesla&from=2024-08-30&sortBy=publishedAt&apiKey=" + apiKey;
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data.articles;
