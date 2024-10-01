@@ -71,7 +71,7 @@ const apiData = {
             "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iLuwHFi3j_1Y/v0/1200x800.jpg",
             "publishedAt": "2024-09-30T01:35:00Z",
             "content": "Chinese stocks extended one of their most remarkable turnarounds in history."
-        }
+        },
     {
         "source": {
             "id": null,
